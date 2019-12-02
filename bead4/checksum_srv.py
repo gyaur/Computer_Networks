@@ -22,15 +22,14 @@ while True:
             if data:
                 temp = data.decode().split("|")
                 if len(temp) == 5 and temp[0] == "BE":
-                    op, file_id, validity_time, _, chsum = data.decode().split(
-                        "|")
+                    op, file_id, validity_time, _, chsum = temp
                     store[file_id] = {
                         "chsum": chsum,
                         "valid_until": time.time() + float(validity_time)
                     }
                     s.sendall("OK".encode())
                 elif len(temp) == 2 and temp[0] == "KI":
-                    op, file_id = data.decode().split("|")
+                    op, file_id = temp
                     if file_id in store.keys(
                     ) and store[file_id]["valid_until"] > time.time():
                         to_send = store[file_id]

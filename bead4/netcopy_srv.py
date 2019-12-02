@@ -16,11 +16,8 @@ with open(file_path, "wb") as f:
 
 chsum_file = hashlib.md5()
 with open(file_path, "rb") as f:
-    while True:
-        data = f.read(65536)
-        if not data:
-            break
-        chsum_file.update(data)
+    data = f.read()
+    chsum_file.update(data)
     chsum_file = chsum_file.hexdigest()
 
 rec_sock.close()
