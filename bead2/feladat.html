@@ -1,0 +1,34 @@
+<div class="col-md-12">
+    <h2>
+        Áramkör szimuláció
+    </h2>
+    <p>Készíts programot, ami leszimulálja az erőforrások lefoglalását és felszabadítását a JSON fájlban megadott
+        topológia, kapacitások és igények alapján!</p>
+    <p><b>Script paraméterezése</b>: python3 client.py cs.json</p>
+    <p><b>A program kimenete</b>:</p>
+    <ul>
+        <li>esemény sorszám. &lt;esemény név&gt;: &lt;node1&gt;&lt;-&gt;&lt;node2&gt; st:&lt;szimuálciós idő&gt; [-
+            &lt;sikeres/sikertelen&gt;]</li>
+    </ul>
+    <p>Pl.:</p>
+    <ol type="1">
+        <li>
+            <p>igény foglalás: A&lt;-&gt;C st:1 – sikeres</p>
+        </li>
+        <li>
+            <p>igény foglalás: B&lt;-&gt;C st:2 – sikeres</p>
+        </li>
+        <li>
+            <p>igény felszabadítás: A&lt;-&gt;C st:5</p>
+        </li>
+        <li>
+            <p>igény foglalás: D&lt;-&gt;C st:6 – sikeres</p>
+        </li>
+        <li>
+            <p>igény foglalás: A&lt;-&gt;C st:7 – sikertelen</p>
+        </li>
+    </ol>
+    <p>…</p>
+    <p><b>Leadás</b>: A program leadása a BE-AD rendszeren <b>.zip</b> formátumban, amiben egy <b>client.py</b>
+        szerepeljen!</p>
+</div>

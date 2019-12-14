@@ -1,0 +1,48 @@
+<div class="col-md-12">
+    <h3>
+        Barkóba
+    </h3>
+    <p>Készítsünk egy barkóba alkalmazást. A szerver legyen képes kiszolgálni több klienst. A szerver válasszon egy
+        egész számot 1..100 között véletlenszerűen. A kliensek próbálják kitalálni a számot.</p>
+    <ul>
+        <li>A kliens logaritmikus keresés segítségével találja ki a gondolt számot. AZAZ a kliens NE a standard inputról
+            dolgozzon.</li>
+        <li>Ha egy kliens kitalálta a számot, akkor a szerver minden újabb kliens üzenetre a „Vége” (V) üzenetet küldi,
+            amire a kliensek kilépnek.</li>
+        <li>Nyertél (Y), Kiestél (K) és Vége (V) üzenet fogadása esetén a kliens bontja a kapcsolatot és terminál. Igen
+            (I) / Nem (N) esetén folytatja a kérdezgetést.</li>
+        <li>A kommunikációhoz TCP-t használjunk!</li>
+    </ul>
+    <p>Üzenet formátum:</p>
+    <ul>
+        <li>Klienstől: <b>bináris formában</b> egy db karakter, 32 bites egész szám. (struct) Ne használjuk a byte
+            sorrend módosító operátort a struct-ban! (‘!’)
+            <ul>
+                <li>A karakter lehet: <b>&lt;</b>: kisebb-e, <b>&gt;</b>: nagyobb-e, <b>=</b>: egyenlő-e</li>
+                <li>pl: (‘&gt;’,10)</li>
+            </ul>
+        </li>
+        <li>Szervertől: ugyanaz a <b>bináris formátum </b>, de a számnak nincs szerepe, bármi lehet (struct)
+            <ul>
+                <li>A karakter lehet: <b>I</b>: Igen, <b>N</b>: Nem, <b>K</b>: Kiestél, <b>Y</b>: Nyertél, <b>V</b>:
+                    Vége</li>
+                <li>pl: (‘V’,0)</li>
+            </ul>
+        </li>
+    </ul>
+    <p><b>Script paraméterezése</b>:</p>
+    <ul>
+        <li>python3 client.py &lt;hostname&gt; &lt;port szám&gt;
+            <ul>
+                <li>pl: python3 client.py localhost 10000</li>
+            </ul>
+        </li>
+        <li>python3 server.py &lt;hostname&gt; &lt;port szám&gt;
+            <ul>
+                <li>pl: python3 client.py localhost 10000</li>
+            </ul>
+        </li>
+    </ul>
+    <p>Leadás: A program leadása a BE-AD rendszeren <b>.zip</b> formátumban, amiben egy <b>client.py</b> és egy
+        <b>server.py</b> szerepeljen!</p>
+</div>
